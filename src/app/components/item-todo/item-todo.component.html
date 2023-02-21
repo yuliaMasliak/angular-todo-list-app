@@ -1,0 +1,25 @@
+<div class="app-item-todo">
+  <div class="list-block">
+    <h2>{{ todoTitle }}</h2>
+    <div class="list-item" *ngFor="let item of itemsList">
+      {{ item.title
+      }}<input
+        type="checkbox"
+        (change)="toggleComplete(item)"
+        (change)="addToDone()"
+      />
+    </div>
+  </div>
+  <div class="list-block">
+    <h2>{{ doneTitle }}</h2>
+    <div class="list-item-completed" *ngFor="let item of completedItems">
+      {{ item.title
+      }}<input
+        type="checkbox"
+        checked
+        (change)="toggleComplete(item)"
+        (change)="addToUndone(item)"
+      />
+    </div>
+  </div>
+</div>

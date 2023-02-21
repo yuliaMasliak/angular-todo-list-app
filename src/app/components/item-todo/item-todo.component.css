@@ -1,0 +1,7 @@
+.app-item-todo {
+  display: flex;
+  width: 600px;
+}
+.list-block {
+  width: 50%;
+}

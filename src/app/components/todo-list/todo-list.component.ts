@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { IListItem } from '../types'
 
 @Component({
@@ -8,30 +8,9 @@ import { IListItem } from '../types'
 })
 export class TodoListComponent implements OnInit {
   @Input() itemsList: IListItem[] = []
-  completedItems: IListItem[] = []
-  todoTitle = 'Todo'
-  doneTitle = 'Done'
+  @Output() TodoAddItem = new EventEmitter()
 
   constructor() {}
 
-  toggleComplete(item: IListItem) {
-    item.isComplete = !item.isComplete
-  }
-  addToDone() {
-    this.itemsList.map((item, index) => {
-      if (item.isComplete) {
-        this.completedItems.push(item)
-        this.itemsList.splice(index, 1)
-      }
-    })
-  }
-  addToUndone(item: IListItem) {
-    this.completedItems.map((item, index) => {
-      if (!item.isComplete) {
-        this.itemsList.push(item)
-        this.completedItems.splice(index, 1)
-      }
-    })
-  }
   ngOnInit(): void {}
 }
