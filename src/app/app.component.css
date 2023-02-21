@@ -1,0 +1,15 @@
+.input-todo {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: large;
+  color: rgb(168, 166, 166);
+  padding-left: 10px;
+}
+.btn-todo {
+  height: 46px;
+  width: 100px;
+  margin-left: 5px;
+  border-radius: 5px;
+  font-size: large;
+}
