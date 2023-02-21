@@ -8,10 +8,11 @@ import { IListItem } from './components/types'
 })
 export class AppComponent implements OnInit {
   itemsList: IListItem[] = []
+
+  title = 'The Todo-List Management App'
   constructor() {}
   ngOnInit(): void {}
   onAddTodo(item: IListItem) {
     this.itemsList.push(item)
-    console.log(this.itemsList)
   }
 }
