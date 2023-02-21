@@ -2,14 +2,11 @@
   <h1>The Todo-List Management App</h1>
 </div>
 <div>
-  <input
-    type="text"
-    class="input-todo"
-    placeholder="Add to do item"
-    (click)="onFocus()"
-  />
+  <input type="text" class="input-todo" placeholder="Add to do item" />
   <button type="button" class="btn-todo" (click)="onSubmit()">Submit</button>
 </div>
 <div class="list">
-  <div class="list-item"></div>
+  <div class="list-item" *ngFor="let item of itemsList">
+    {{ item.title }}<input type="checkbox" (change)="toggleComplete()" />
+  </div>
 </div>

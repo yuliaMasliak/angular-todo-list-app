@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core'
 
+interface IListItem {
+  id: number
+  title: string
+  isComplete: boolean
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,22 +13,24 @@ import { Component, OnInit } from '@angular/core'
 })
 export class AppComponent {
   todoItem = ''
-  input: HTMLInputElement
+  itemsList: IListItem[] = []
+  idCounter = 0
+  isComplete = false
 
-  constructor() {
-    this.input = document.querySelector('.input-todo') as HTMLInputElement
-  }
+  constructor() {}
 
   onSubmit() {
-    let itemList = document.querySelector('.list-item') as HTMLElement
-    let itemToAdd = document.createElement('div') as HTMLElement
-    itemToAdd.classList.add('list-item-to-add')
     let input = document.querySelector('.input-todo') as HTMLInputElement
-    itemToAdd.innerHTML = input.value
-    itemList.append(itemToAdd)
-  }
-  onFocus() {
-    let input = document.querySelector('.input-todo') as HTMLInputElement
+    this.itemsList.push({
+      id: this.idCounter,
+      title: input.value,
+      isComplete: this.isComplete
+    })
+    this.idCounter += 1
     input.value = ''
+  }
+  toggleComplete() {
+    this.isComplete = !this.isComplete
+    console.log(this.isComplete)
   }
 }
