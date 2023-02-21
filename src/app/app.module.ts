@@ -4,9 +4,11 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { AddTodoComponent } from './components/add-todo/add-todo.component'
+import { TodoListComponent } from './components/todo-list/todo-list.component'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AddTodoComponent, TodoListComponent],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]

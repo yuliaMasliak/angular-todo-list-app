@@ -1,0 +1,5 @@
+<div class="list">
+  <div class="list-item" *ngFor="let item of itemsList">
+    {{ item.title }}<input type="checkbox" (change)="toggleComplete(item)" />
+  </div>
+</div>

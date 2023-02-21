@@ -1,36 +1,17 @@
 import { Component, OnInit } from '@angular/core'
-
-interface IListItem {
-  id: number
-  title: string
-  isComplete: boolean
-}
+import { IListItem } from './components/types'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  todoItem = ''
+export class AppComponent implements OnInit {
   itemsList: IListItem[] = []
-  idCounter = 0
-  isComplete = false
-
   constructor() {}
-
-  onSubmit() {
-    let input = document.querySelector('.input-todo') as HTMLInputElement
-    this.itemsList.push({
-      id: this.idCounter,
-      title: input.value,
-      isComplete: this.isComplete
-    })
-    this.idCounter += 1
-    input.value = ''
-  }
-  toggleComplete() {
-    this.isComplete = !this.isComplete
-    console.log(this.isComplete)
+  ngOnInit(): void {}
+  onAddTodo(item: IListItem) {
+    this.itemsList.push(item)
+    console.log(this.itemsList)
   }
 }
