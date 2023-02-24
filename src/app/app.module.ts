@@ -4,13 +4,12 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { AddTodoComponent } from './components/add-todo/add-todo.component'
-import { TodoListComponent } from './components/todo-list/todo-list.component';
-import { ItemTodoComponent } from './components/item-todo/item-todo.component'
+import { PageDesignDirective } from './directives/page-design.directive'
+import { TodoModule } from './todo/todo.module'
 
 @NgModule({
-  declarations: [AppComponent, AddTodoComponent, TodoListComponent, ItemTodoComponent],
-  imports: [FormsModule, BrowserModule, AppRoutingModule],
+  declarations: [AppComponent],
+  imports: [FormsModule, BrowserModule, AppRoutingModule, TodoModule],
   providers: [],
   bootstrap: [AppComponent]
 })

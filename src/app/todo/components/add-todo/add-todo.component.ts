@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core'
-import { IListItem } from '../types'
+import { IListItem } from '../../../models/types'
 
 @Component({
   selector: 'app-add-todo',

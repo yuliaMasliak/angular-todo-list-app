@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { IListItem } from './components/types'
+import { IListItem } from './models/types'
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,4 @@ export class AppComponent implements OnInit {
   title = 'The Todo-List Management App'
   constructor() {}
   ngOnInit(): void {}
-  onAddTodo(item: IListItem) {
-    this.itemsList.push(item)
-  }
 }
